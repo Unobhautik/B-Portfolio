@@ -1,0 +1,182 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 142 77% 21%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 142 77% 21%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 80%;
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 80%;
+    --sidebar-primary: 0 0% 90%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 142 77% 21%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    cursor: none;
+  }
+  
+  html {
+    scroll-behavior: smooth !important;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease forwards;
+  }
+}
+
+.custom-cursor {
+  @apply pointer-events-none fixed z-[100];
+  will-change: transform;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.cursor-ring {
+  @apply rounded-full border border-forest dark:border-forest;
+  transition: width 0.2s, height 0.2s, transform 0.1s;
+  will-change: transform, width, height, border;
+}
+
+.cursor-dot {
+  @apply rounded-full bg-forest dark:bg-forest;
+  transition: width 0.2s, height 0.2s, transform 0.1s;
+  will-change: transform, width, height;
+}
+
+.canvas-container {
+  @apply h-screen w-full fixed top-0 left-0 z-0 pointer-events-none;
+}
+
+.section-wrapper {
+  @apply relative z-10 min-h-screen px-4 md:px-6 lg:px-12 max-w-6xl mx-auto overflow-hidden;
+}
+
+.project-item {
+  @apply border-b border-black/10 dark:border-white/10 py-8 transition-all duration-300 relative;
+}
+
+.project-item:hover h3 {
+  @apply text-forest;
+}
+
+.project-item:hover .project-image {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.project-image {
+  @apply hidden md:block absolute right-0 top-1/2 w-48 h-32 rounded-md bg-cover bg-center opacity-0 z-10 transition-all duration-300 shadow-lg;
+  transform: translateY(-50%) translateX(20px);
+}
+
+.experience-item {
+  @apply border-l-2 border-black/10 dark:border-white/10 pl-6 py-4 relative transition-all duration-300;
+}
+
+.experience-item::before {
+  content: '';
+  @apply absolute w-3 h-3 bg-forest rounded-full -left-[7px] top-6;
+}
+
+.experience-item:hover {
+  @apply border-forest;
+}
+
+.link-underline {
+  @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-forest after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+}
+
+.theme-toggle-transition {
+  transition: all 0.15s ease !important;
+}
+
+/* Mobile specific styles */
+@media (max-width: 768px) {
+  .section-wrapper {
+    @apply py-8;
+  }
+}
