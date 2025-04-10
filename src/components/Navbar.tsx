@@ -70,14 +70,14 @@ const Navbar = () => {
             
             {mobileMenuOpen && (
               <div className="fixed inset-x-0 top-16 bg-white/95 dark:bg-black/95 backdrop-blur-sm shadow-md z-20 p-4 animate-fade-in">
-                <div className="flex flex-col gap-4">
-                  <Link to="/about" className="py-2 link-underline" onClick={closeMobileMenu}>
+                <div className="flex flex-col gap-4 items-center text-center">
+                  <Link to="/about" className="py-2 link-underline w-full" onClick={closeMobileMenu}>
                     About
                   </Link>
-                  <Link to="/projects" className="py-2 link-underline" onClick={closeMobileMenu}>
+                  <Link to="/projects" className="py-2 link-underline w-full" onClick={closeMobileMenu}>
                     Projects
                   </Link>
-                  <Link to="/experience" className="py-2 link-underline" onClick={closeMobileMenu}>
+                  <Link to="/experience" className="py-2 link-underline w-full" onClick={closeMobileMenu}>
                     Experience
                   </Link>
                   <button 
@@ -85,11 +85,11 @@ const Navbar = () => {
                       handleResumeDownload();
                       closeMobileMenu();
                     }} 
-                    className="py-2 text-left link-underline"
+                    className="py-2 link-underline w-full"
                   >
                     Resume
                   </button>
-                  <Link to="/contact" className="bg-forest text-white px-4 py-2 hover:bg-forest-light transition-colors text-center" onClick={closeMobileMenu}>
+                  <Link to="/contact" className="bg-forest text-white px-4 py-2 hover:bg-forest-light transition-colors text-center w-full" onClick={closeMobileMenu}>
                     Contact
                   </Link>
                 </div>
