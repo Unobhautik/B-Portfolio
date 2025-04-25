@@ -29,7 +29,7 @@ const Projects = () => {
       description:
         "Online marketplace built with Vite, TypeScript, and React, featuring a contemporary interface with ShadCN-UI and Tailwind CSS for an intuitive purchasing journey.",
       technologies: ["Vite", "TypeScript", "React", "ShadCN-UI", "Tailwind CSS"],
-      link: "https://kp-delta.vercel.app/",
+      link: "https://www.kalpraj.in/",
       image: honeyImg,
     },
     {
