@@ -30,7 +30,7 @@ const Projects = () => {
       description:
         "AI-powered document question answering system using LangChain, Google Gemini AI, and FAISS with a user-friendly interface for uploading and querying PDF/TXT files.",
       technologies: ["LangChain", "Google Gemini AI", "FAISS", "Python", "Document Analysis"],
-      link: "https://bpaperchat.vercel.app/",
+      link: "https://bpaperchat.streamlit.app/",
       image: bpaperchat,
     },
     {
