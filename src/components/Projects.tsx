@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 
 // Import images directly from assets
 import deshanaImg from "../assets/images/deshana.jpg";
+import bpaperchat from "../assets/images/bpaperchat.png;
 import honeyImg from "../assets/images/honey.jpg";
 import businessImg from "../assets/images/business.jpg";
 import cafeImg from "../assets/images/cafe.jpg";
@@ -23,6 +24,14 @@ const Projects = () => {
         "AI-powered nutritious meal suggestion system utilizing Python, FastAPI, and Scikit-learn with an engaging interface built with Streamlit for data visualization.",
       technologies: ["Python", "FastAPI", "Scikit-learn", "Streamlit", "Data Visualization"],
       // ❌ No image property for this project
+    },
+     {
+      title: "Document QA – AI-Powered PDF/Text Analysis Tool",
+      description:
+        "AI-powered document question answering system using LangChain, Google Gemini AI, and FAISS with a user-friendly interface for uploading and querying PDF/TXT files.",
+      technologies: ["LangChain", "Google Gemini AI", "FAISS", "Python", "Document Analysis"],
+      link: "https://bpaperchat.vercel.app/",
+      image: bpaperchat,
     },
     {
       title: "Honey E-com",
